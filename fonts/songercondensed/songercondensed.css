@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'SONGER Condensed';
+    src: local('SONGER Condensed Medium'), local('SONGERCondensed-Medium'), url('Songercondensedmedium.woff2') format('woff2'), url('Songercondensedmedium.woff') format('woff'), url('Songercondensedmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SONGER Condensed';
+    src: local('SONGER Condensed'), local('SONGERCondensed'), url('Songercondensed.woff2') format('woff2'), url('Songercondensed.woff') format('woff'), url('Songercondensed.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SONGER Condensed';
+    src: local('SONGER Condensed Heavy'), local('SONGERCondensed-Heavy'), url('Songercondensedheavy.woff2') format('woff2'), url('Songercondensedheavy.woff') format('woff'), url('Songercondensedheavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SONGER Condensed';
+    src: local('SONGER Condensed Bold'), local('SONGERCondensed-Bold'), url('Songercondensedbold.woff2') format('woff2'), url('Songercondensedbold.woff') format('woff'), url('Songercondensedbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SONGER Condensed';
+    src: local('SONGER Condensed ExtraBold'), local('SONGERCondensed-ExtraBold'), url('Songercondensedextrabold.woff2') format('woff2'), url('Songercondensedextrabold.woff') format('woff'), url('Songercondensedextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
