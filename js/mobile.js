@@ -13,24 +13,6 @@ function addTimestampToCSS() {
         document.head.appendChild(linkElement);
     });
 }
-
-addTimestampToCSS();
-
-gsap.registerPlugin(ScrollSmoother);
-let smoother = ScrollSmoother.create({
-    smooth: 1,   // seconds it takes to "catch up" to native scroll position
-    effects: true // look for data-speed and data-lag attributes on elements and animate accordingly
-});
-
-gsap.registerPlugin(ScrollToPlugin);
-
-document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        gsap.to(window, { scrollTo: this.getAttribute("href"), duration: 1 });
-    });
-});
 var questions = document.getElementsByClassName('question');
 var answers = document.getElementsByClassName('answer');
 
@@ -55,56 +37,8 @@ function hideAllAnswers() {
     }
 }
 
+addTimestampToCSS();
 
-const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 2,
-    centeredSlides: true,
-    spaceBetween: 63,
-    loop: true,
-    on: {
-        slideChange: function () {
-            let slides = this.slides;
-            slides.forEach(slide => {
-                slide.classList.remove('lefter', 'righter');
-            });
-
-            let activeIndex = this.activeIndex;
-
-            if (this.isBeginning) {
-                slides[activeIndex + 1].classList.add('righter');
-            } else if (this.isEnd) {
-                slides[activeIndex - 1].classList.add('lefter');
-            } else {
-                slides[activeIndex - 1].classList.add('lefter');
-                slides[activeIndex + 1].classList.add('righter');
-            }
-        },
-    },
-
-});
-window.addEventListener('load', function () {
-    if (window.innerWidth <= 769) {
-        swiper.params.slidesPerView = 1.2; // Изменяем количество слайдов на 1
-        swiper.params.loop = false; // Отключаем циклическую прокрутку
-        swiper.params.centeredSlides = false; // Отключаем циклическую прокрутку
-        swiper.update(); // Обновляем слайдер
-    } else {
-        return;
-    }
-});
-
-var rightButton = document.getElementById('rightbutton');
-var leftButton = document.getElementById('leftbutton');
-
-if (rightButton && leftButton && swiper) {
-    rightButton.addEventListener('click', () => {
-        swiper.slideNext();
-    });
-
-    leftButton.addEventListener('click', () => {
-        swiper.slidePrev();
-    });
-}
 let center = [45.054747563133034, 37.124260537664355];
 
 ymaps.ready(init);
@@ -129,6 +63,15 @@ function init() {
     myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
     myMap.controls.remove('rulerControl'); // удаляем контрол правил
 }
+gsap.registerPlugin(ScrollToPlugin);
+
+document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        gsap.to(window, { scrollTo: this.getAttribute("href"), duration: 1 });
+    });
+});
 window.addEventListener("DOMContentLoaded", function () {
     [].forEach.call(document.querySelectorAll('.tel'), function (input) {
         var keyCode;
